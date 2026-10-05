@@ -273,6 +273,24 @@ footer > p:last-of-type { margin-top: 2rem; padding-top: 1.25rem; border-top: 1p
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
+/* ---------- Menu burger (visible sur mobile) ---------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  align-items: center;
+  background: var(--mist);
+  border-radius: 12px;
+}
+.burger span { display: block; width: 1.3rem; height: 2px; border-radius: 2px; background: var(--emerald-deep); transition: transform 0.25s, opacity 0.2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   #description { grid-template-columns: 1fr; }
@@ -280,9 +298,27 @@ footer > p:last-of-type { margin-top: 2rem; padding-top: 1.25rem; border-top: 1p
   .maindescription-img { aspect-ratio: 1 / 1; width: min(100%, 440px); margin-inline: auto; }
 }
 @media (max-width: 720px) {
-  nav { flex-wrap: wrap; row-gap: 0.5rem; }
-  nav ul { order: 3; width: 100%; overflow-x: auto; gap: 1.5rem; padding-bottom: 0.25rem; scrollbar-width: none; }
-  nav ul::-webkit-scrollbar { display: none; }
+  nav { gap: 0.75rem; }
+  .burger { display: flex; }
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem var(--edge) 1rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 24px rgba(10, 61, 46, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+  nav ul.open { opacity: 1; visibility: visible; transform: none; }
+  nav ul li + li { border-top: 1px solid var(--line); }
+  nav ul a { display: block; padding: 0.95rem 0; font-size: 1.1rem; background: none; }
   .wth { margin-left: auto; }
   .wth > a { padding: 0.6rem 1.1rem 0.6rem 0.4rem; }
   #robe, #costume, #ensemble, #sac, #chaussure_femme, #chaussure_homme { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
