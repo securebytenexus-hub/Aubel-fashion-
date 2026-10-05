@@ -1,0 +1,293 @@
+/* ==========================================================
+   MABIA SHOP : index.css
+   Palette : vert émeraude profond + jaune souci (clin d'œil
+   aux couleurs du Togo), fond blanc cassé frais.
+   Polices : Bricolage Grotesque (titres) + Figtree (texte)
+   ========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap");
+
+:root {
+  --emerald-deep: #0a3d2e;
+  --emerald: #0e5a43;
+  --marigold: #f4b63b;
+  --marigold-dark: #e0a021;
+  --ink: #12261f;
+  --muted: #566860;
+  --paper: #f8f9f5;
+  --mist: #e8f0eb;
+  --line: #d6e0d9;
+  --white: #fff;
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --edge: max(var(--gutter), calc((100vw - 1200px) / 2));
+  --radius: 14px;
+  --section-y: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+button:has(> a) { padding: 0; display: inline-flex; align-items: center; }
+button > a { flex: 1; text-align: center; padding: 0.75rem 1.4rem; text-decoration: none; color: inherit; }
+button > div { display: grid; place-items: center; padding-left: 1.2rem; font-size: 1.1rem; }
+button > div + a { padding-left: 0.6rem; }
+
+:focus-visible { outline: 3px solid var(--emerald); outline-offset: 3px; }
+#description :focus-visible, footer :focus-visible { outline-color: var(--marigold); }
+
+/* Titres de section communs */
+#personnal-branding > h1, #info-action h1, #Apropos h1, #contact h1,
+#Commentcommander h1, [id="#Commentcommander"] h1 {
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* ---------- En-tête / navigation ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(248, 249, 245, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem var(--edge);
+}
+.logo { display: flex; align-items: center; gap: 0.6rem; }
+.logo img { height: 2.5rem; width: auto; }
+.logo img[src=""] { display: none; }
+.logo p { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--emerald-deep); }
+nav ul { display: flex; gap: clamp(1rem, 3vw, 2.25rem); }
+nav ul a { text-decoration: none; font-weight: 500; padding: 0.25rem 0; background: linear-gradient(var(--marigold), var(--marigold)) 0 100% / 0 3px no-repeat; transition: background-size 0.25s; }
+nav ul a:hover { background-size: 100% 3px; }
+.light-wth > div { display: none; }
+.wth { background: var(--emerald); color: var(--white); }
+.wth:hover { background: var(--emerald-deep); }
+
+/* ---------- Hero ---------- */
+#description {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--edge) 0;
+  background: var(--emerald-deep);
+  color: var(--white);
+  overflow: hidden;
+}
+.maindescription { padding-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+.maindescription br { display: none; }
+.maindescription h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; }
+.maindescription h1:first-child { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 500; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.78); margin-bottom: 0.4rem; }
+.maindescription h1 span { color: var(--marigold); }
+.premier-action { margin-top: 2rem; }
+.premier-action button { background: var(--marigold); color: var(--ink); font-weight: 700; font-size: 1.05rem; padding: 1rem 2rem; }
+.premier-action button:hover { background: var(--white); }
+
+.maindescription-img { position: relative; align-self: end; display: grid; place-items: end center; aspect-ratio: 1 / 1.05; }
+.maindescription-img::before {
+  content: "";
+  position: absolute;
+  inset: 4% 10% 0;
+  background: var(--marigold);
+  border-radius: 999px 999px 0 0;
+}
+.maindescription-img img { position: relative; z-index: 1; }
+.maindescription-img img:first-child { height: 100%; width: auto; max-width: 85%; object-fit: contain; }
+.maindescription-img img:last-child {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 8%;
+  width: 34%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.3));
+}
+
+/* ---------- Pourquoi nous ---------- */
+#personnal-branding { padding: var(--section-y) var(--edge); }
+#option { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.option1 { border-top: 2px solid var(--emerald); padding-top: 1.25rem; }
+.option1 > div { display: grid; place-items: center; width: 2.9rem; height: 2.9rem; background: var(--marigold); color: var(--emerald-deep); font-size: 1.2rem; border-radius: 12px 12px 12px 2px; margin-bottom: 1rem; }
+.option1 h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+.option1 p { color: var(--muted); max-width: 32ch; }
+
+/* ---------- Produits ---------- */
+#info-action { padding: var(--section-y) var(--edge) 1.5rem; }
+#info-action p { color: var(--muted); max-width: 56ch; margin: 0.75rem 0 1.5rem; }
+.action { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.action button { background: var(--white); color: var(--ink); border: 1px solid var(--line); }
+.action button:hover { border-color: var(--emerald); }
+.action button.active, .action button[aria-pressed="true"] { background: var(--emerald); border-color: var(--emerald); color: var(--white); }
+
+#robe, #costume, #ensemble, #sac, #chaussure_femme, #chaussure_homme {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 235px), 1fr));
+  gap: 2.25rem 1.5rem;
+  padding: 1.5rem var(--edge) 2.5rem;
+}
+#robe::before, #costume::before, #ensemble::before, #sac::before,
+#chaussure_femme::before, #chaussure_homme::before {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+#robe::before { content: "Robes"; }
+#costume::before { content: "Costumes"; }
+#ensemble::before { content: "Ensembles"; }
+#sac::before { content: "Sacs à main"; }
+#chaussure_femme::before { content: "Chaussures femme"; }
+#chaussure_homme::before { content: "Chaussures homme"; }
+
+article { display: flex; flex-direction: column; }
+article img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); background: var(--mist); transition: transform 0.4s; }
+article:hover img { transform: scale(1.02); }
+article h3 {
+  margin-top: 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+article p { margin: 0.3rem 0 1rem; font-weight: 700; color: var(--emerald); }
+article button { margin-top: auto; width: 100%; background: var(--emerald); color: var(--white); text-align: center; }
+article button:hover { background: var(--marigold); color: var(--ink); }
+
+/* ---------- Comment commander ---------- */
+#Commentcommander, [id="#Commentcommander"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem 1.75rem;
+  padding: var(--section-y) var(--edge);
+  background: var(--mist);
+}
+#Commentcommander > h1, [id="#Commentcommander"] > h1 { grid-column: 1 / -1; }
+.commande h3 { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1.1rem; font-weight: 700; line-height: 1.25; }
+.commande h3 span {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--emerald);
+  color: var(--white);
+  font-size: 0.95rem;
+}
+.commande p { margin-top: 0.5rem; padding-left: 2.75rem; color: var(--muted); }
+.choix { grid-column: 1 / -1; justify-self: start; background: var(--marigold); color: var(--ink); font-weight: 700; }
+.choix > a { padding: 1rem 2rem; }
+.choix:hover { background: var(--emerald); color: var(--white); }
+
+/* ---------- À propos ---------- */
+#Apropos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.75rem;
+  padding: var(--section-y) var(--edge);
+}
+#Apropos > h1, #Apropos > p { grid-column: 1 / -1; }
+#Apropos > p { max-width: 64ch; font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-top: -0.75rem; margin-bottom: 0.75rem; }
+#Apropos > div { border-top: 2px solid var(--emerald); padding-top: 1rem; }
+#Apropos h3 { font-size: 1.15rem; font-weight: 700; }
+#Apropos div p { color: var(--muted); }
+
+/* ---------- Contact ---------- */
+#contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: var(--section-y) var(--edge);
+  background: var(--mist);
+}
+#contact h1, #contact p { flex-basis: 100%; }
+#contact p { line-height: 1.7; margin-bottom: 1rem; }
+#contact p span { display: inline-block; margin-top: 0.9rem; font-size: 0.9rem; font-weight: 700; color: var(--emerald); }
+#contact button { background: var(--white); color: var(--ink); border: 1px solid var(--line); }
+#contact button:hover { border-color: var(--emerald); }
+#contact button:first-of-type { background: var(--emerald); color: var(--white); border-color: var(--emerald); }
+#contact button:first-of-type:hover { background: var(--emerald-deep); }
+
+/* ---------- Pied de page ---------- */
+footer { background: var(--emerald-deep); color: rgba(255, 255, 255, 0.82); padding: 3.5rem var(--edge) 2rem; }
+footer h2 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; color: var(--white); margin-bottom: 0.5rem; }
+footer ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin: 1.25rem 0; }
+footer li { position: relative; }
+footer li a { position: absolute; inset: 0; }  /* rend tout le texte du <li> cliquable */
+footer button { background: transparent; color: var(--white); border: 1px solid rgba(255, 255, 255, 0.35); margin: 0 0.5rem 0.5rem 0; }
+footer button:hover { background: var(--marigold); border-color: var(--marigold); color: var(--ink); }
+footer > p:last-of-type { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
+
+/* ---------- Animation d'arrivée (hero uniquement) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .maindescription { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .maindescription-img::before { transform-origin: bottom; animation: grow 0.9s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .maindescription-img img { animation: rise 0.8s 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  #description { grid-template-columns: 1fr; }
+  .maindescription { padding-bottom: 0; }
+  .maindescription-img { aspect-ratio: 1 / 1; width: min(100%, 440px); margin-inline: auto; }
+}
+@media (max-width: 720px) {
+  nav { flex-wrap: wrap; row-gap: 0.5rem; }
+  nav ul { order: 3; width: 100%; overflow-x: auto; gap: 1.5rem; padding-bottom: 0.25rem; scrollbar-width: none; }
+  nav ul::-webkit-scrollbar { display: none; }
+  .wth { margin-left: auto; }
+  .wth > a { padding: 0.6rem 1.1rem 0.6rem 0.4rem; }
+  #robe, #costume, #ensemble, #sac, #chaussure_femme, #chaussure_homme { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
+  article h3 { font-size: 0.95rem; }
+}
+@media (max-width: 380px) {
+  #robe, #costume, #ensemble, #sac, #chaussure_femme, #chaussure_homme { grid-template-columns: 1fr; }
+}
