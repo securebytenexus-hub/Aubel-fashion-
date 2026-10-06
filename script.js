@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("article").forEach((article) => {
     const nom = article.querySelector("h3").textContent.trim();
     const prix = article.querySelector("p").textContent.replace(/^\s*Prix\s*:\s*/i, "").trim();
-    const image = article.querySelector("img").src; // adresse complète de la photo
-    const message = `Bonjour MABIA SHOP, je souhaite commander : ${nom} (${prix}).\nPhoto de l'article :\n${image}\nEst-il disponible ?`;
+    const message = `Bonjour MABIA SHOP, je souhaite commander : ${nom} (${prix}). Est-il disponible ?`;
     const lien = article.querySelector("button a");
     if (lien) {
       lien.href = `https://wa.me/${NUMERO}?text=${encodeURIComponent(message)}`;
