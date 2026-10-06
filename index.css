@@ -17,6 +17,11 @@
   --mist: #e8f0eb;
   --line: #d6e0d9;
   --white: #fff;
+  --surface: #fff;
+  --brand-text: #0a3d2e;
+  --accent-text: #0e5a43;
+  --on-gold: #12261f;
+  --header-bg: rgba(248, 249, 245, 0.88);
 
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
@@ -25,6 +30,22 @@
   --edge: max(var(--gutter), calc((100vw - 1200px) / 2));
   --radius: 14px;
   --section-y: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* ---------- Thème sombre (activé par le bouton, via data-theme) ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --emerald-deep: #072b21;
+  --emerald: #17775a;
+  --ink: #e9f1ec;
+  --muted: #9db0a6;
+  --paper: #0d1714;
+  --mist: #14231d;
+  --line: #243d33;
+  --surface: #1a2c24;
+  --brand-text: #8fdcbb;
+  --accent-text: #5fd3a5;
+  --header-bg: rgba(13, 23, 20, 0.88);
 }
 
 /* ---------- Base ---------- */
@@ -59,11 +80,11 @@ button > a { flex: 1; text-align: center; padding: 0.75rem 1.4rem; text-decorati
 button > div { display: grid; place-items: center; padding-left: 1.2rem; font-size: 1.1rem; }
 button > div + a { padding-left: 0.6rem; }
 
-:focus-visible { outline: 3px solid var(--emerald); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
 #description :focus-visible, footer :focus-visible { outline-color: var(--marigold); }
 
 /* Titres de section communs */
-#personnal-branding > h1, #info-action h1, #Apropos h1, #contact h1,
+#personnal-branding > h1, #info-action h1, #position h1, #Apropos h1, #contact h1,
 #Commentcommander h1, [id="#Commentcommander"] h1 {
   font-size: clamp(1.9rem, 3.6vw, 2.8rem);
   font-weight: 700;
@@ -75,7 +96,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(248, 249, 245, 0.88);
+  background: var(--header-bg);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -90,11 +111,16 @@ nav {
 .logo { display: flex; align-items: center; gap: 0.6rem; }
 .logo img { height: 2.5rem; width: auto; }
 .logo img[src=""] { display: none; }
-.logo p { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--emerald-deep); }
+.logo p { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--brand-text); }
 nav ul { display: flex; gap: clamp(1rem, 3vw, 2.25rem); }
 nav ul a { text-decoration: none; font-weight: 500; padding: 0.25rem 0; background: linear-gradient(var(--marigold), var(--marigold)) 0 100% / 0 3px no-repeat; transition: background-size 0.25s; }
 nav ul a:hover { background-size: 100% 3px; }
-.light-wth > div { display: none; }
+.light-wth { display: flex; align-items: center; gap: 0.6rem; }
+.theme-toggle { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; padding: 0; font-size: 1.05rem; background: var(--mist); color: var(--brand-text); }
+.theme-toggle:hover { background: var(--line); }
+.theme-toggle .fa-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .fa-sun { display: inline; }
+:root[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
 .wth { background: var(--emerald); color: var(--white); }
 .wth:hover { background: var(--emerald-deep); }
 
@@ -115,7 +141,7 @@ nav ul a:hover { background-size: 100% 3px; }
 .maindescription h1:first-child { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 500; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.78); margin-bottom: 0.4rem; }
 .maindescription h1 span { color: var(--marigold); }
 .premier-action { margin-top: 2rem; }
-.premier-action button { background: var(--marigold); color: var(--ink); font-weight: 700; font-size: 1.05rem; padding: 1rem 2rem; }
+.premier-action button { background: var(--marigold); color: var(--on-gold); font-weight: 700; font-size: 1.05rem; padding: 1rem 2rem; }
 .premier-action button:hover { background: var(--white); }
 
 .maindescription-img { position: relative; align-self: end; display: grid; place-items: end center; aspect-ratio: 1 / 1.05; }
@@ -142,7 +168,7 @@ nav ul a:hover { background-size: 100% 3px; }
 /* ---------- Pourquoi nous ---------- */
 #personnal-branding { padding: var(--section-y) var(--edge); }
 #option { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
-.option1 { border-top: 2px solid var(--emerald); padding-top: 1.25rem; }
+.option1 { border-top: 2px solid var(--accent-text); padding-top: 1.25rem; }
 .option1 > div { display: grid; place-items: center; width: 2.9rem; height: 2.9rem; background: var(--marigold); color: var(--emerald-deep); font-size: 1.2rem; border-radius: 12px 12px 12px 2px; margin-bottom: 1rem; }
 .option1 h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
 .option1 p { color: var(--muted); max-width: 32ch; }
@@ -151,7 +177,7 @@ nav ul a:hover { background-size: 100% 3px; }
 #info-action { padding: var(--section-y) var(--edge) 1.5rem; }
 #info-action p { color: var(--muted); max-width: 56ch; margin: 0.75rem 0 1.5rem; }
 .action { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.action button { background: var(--white); color: var(--ink); border: 1px solid var(--line); }
+.action button { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
 .action button:hover { border-color: var(--emerald); }
 .action button.active, .action button[aria-pressed="true"] { background: var(--emerald); border-color: var(--emerald); color: var(--white); }
 
@@ -191,9 +217,9 @@ article h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-article p { margin: 0.3rem 0 1rem; font-weight: 700; color: var(--emerald); }
+article p { margin: 0.3rem 0 1rem; font-weight: 700; color: var(--accent-text); }
 article button { margin-top: auto; width: 100%; background: var(--emerald); color: var(--white); text-align: center; }
-article button:hover { background: var(--marigold); color: var(--ink); }
+article button:hover { background: var(--marigold); color: var(--on-gold); }
 
 /* ---------- Comment commander ---------- */
 #Commentcommander, [id="#Commentcommander"] {
@@ -217,7 +243,7 @@ article button:hover { background: var(--marigold); color: var(--ink); }
   font-size: 0.95rem;
 }
 .commande p { margin-top: 0.5rem; padding-left: 2.75rem; color: var(--muted); }
-.choix { grid-column: 1 / -1; justify-self: start; background: var(--marigold); color: var(--ink); font-weight: 700; }
+.choix { grid-column: 1 / -1; justify-self: start; background: var(--marigold); color: var(--on-gold); font-weight: 700; }
 .choix > a { padding: 1rem 2rem; }
 .choix:hover { background: var(--emerald); color: var(--white); }
 
@@ -230,7 +256,7 @@ article button:hover { background: var(--marigold); color: var(--ink); }
 }
 #Apropos > h1, #Apropos > p { grid-column: 1 / -1; }
 #Apropos > p { max-width: 64ch; font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-top: -0.75rem; margin-bottom: 0.75rem; }
-#Apropos > div { border-top: 2px solid var(--emerald); padding-top: 1rem; }
+#Apropos > div { border-top: 2px solid var(--accent-text); padding-top: 1rem; }
 #Apropos h3 { font-size: 1.15rem; font-weight: 700; }
 #Apropos div p { color: var(--muted); }
 
@@ -244,11 +270,19 @@ article button:hover { background: var(--marigold); color: var(--ink); }
 }
 #contact h1, #contact p { flex-basis: 100%; }
 #contact p { line-height: 1.7; margin-bottom: 1rem; }
-#contact p span { display: inline-block; margin-top: 0.9rem; font-size: 0.9rem; font-weight: 700; color: var(--emerald); }
-#contact button { background: var(--white); color: var(--ink); border: 1px solid var(--line); }
+#contact p span { display: inline-block; margin-top: 0.9rem; font-size: 0.9rem; font-weight: 700; color: var(--accent-text); }
+#contact button { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
 #contact button:hover { border-color: var(--emerald); }
 #contact button:first-of-type { background: var(--emerald); color: var(--white); border-color: var(--emerald); }
 #contact button:first-of-type:hover { background: var(--emerald-deep); }
+
+/* ---------- Localisation (carte) ---------- */
+#position { padding: var(--section-y) var(--edge); }
+#position > p { color: var(--muted); margin: 0.6rem 0 1.5rem; max-width: 56ch; }
+#position iframe { display: block; width: 100%; height: clamp(300px, 45vw, 440px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--mist); }
+:root[data-theme="dark"] #position iframe { filter: invert(0.9) hue-rotate(180deg) brightness(0.95) contrast(0.9); }
+#position > button { margin-top: 1.25rem; background: var(--emerald); color: var(--white); }
+#position > button:hover { background: var(--marigold); color: var(--on-gold); }
 
 /* ---------- Pied de page ---------- */
 footer { background: var(--emerald-deep); color: rgba(255, 255, 255, 0.82); padding: 3.5rem var(--edge) 2rem; }
@@ -257,7 +291,7 @@ footer ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin: 1.25rem
 footer li { position: relative; }
 footer li a { position: absolute; inset: 0; }  /* rend tout le texte du <li> cliquable */
 footer button { background: transparent; color: var(--white); border: 1px solid rgba(255, 255, 255, 0.35); margin: 0 0.5rem 0.5rem 0; }
-footer button:hover { background: var(--marigold); border-color: var(--marigold); color: var(--ink); }
+footer button:hover { background: var(--marigold); border-color: var(--marigold); color: var(--on-gold); }
 footer > p:last-of-type { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
 
 /* ---------- Animation d'arrivée (hero uniquement) ---------- */
@@ -286,7 +320,7 @@ footer > p:last-of-type { margin-top: 2rem; padding-top: 1.25rem; border-top: 1p
   background: var(--mist);
   border-radius: 12px;
 }
-.burger span { display: block; width: 1.3rem; height: 2px; border-radius: 2px; background: var(--emerald-deep); transition: transform 0.25s, opacity 0.2s; }
+.burger span { display: block; width: 1.3rem; height: 2px; border-radius: 2px; background: var(--brand-text); transition: transform 0.25s, opacity 0.2s; }
 .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -323,6 +357,13 @@ footer > p:last-of-type { margin-top: 2rem; padding-top: 1.25rem; border-top: 1p
   .wth > a { padding: 0.6rem 1.1rem 0.6rem 0.4rem; }
   #robe, #costume, #ensemble, #sac, #chaussure_femme, #chaussure_homme { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
   article h3 { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .logo p { font-size: 1.1rem; }
+  .light-wth { gap: 0.4rem; }
+  .wth { position: relative; height: 2.5rem; }
+  .wth > div { padding: 0 0.95rem; }
+  .wth > a { position: absolute; inset: 0; padding: 0; font-size: 0; }  /* icône seule, bouton entièrement cliquable */
 }
 @media (max-width: 380px) {
   #robe, #costume, #ensemble, #sac, #chaussure_femme, #chaussure_homme { grid-template-columns: 1fr; }
