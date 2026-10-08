@@ -3,474 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MABIA SHOP</title>
+    <title>MABIA SHOP | Boutique de mode à Lomé</title>
+    <meta name="description" content="MABIA SHOP, boutique de mode à Lomé : robes, costumes, ensembles, sacs et chaussures. Commandez par WhatsApp, livraison à Lomé et environs.">
     <link rel="stylesheet" href="index.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Sans "defer" volontairement : le thème est appliqué tout de suite pour éviter le flash -->
+    <script src="script.js"></script>
 </head>
 <body>
-     <header>
-         <nav>
-             <div  class="logo">
-                <img src="assets/logovert.png" alt="Logo">
-                <p><span>MABIA SHOP</span>  </p>
-             </div>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-<ul id="menu">
-                <li>
-                    <a href="#description">Acceuil</a> 
-                </li> 
-                <li>
-                    <a href="#produit">Produits</a> 
-                </li>
-                <li>
-                    <a href="#Apropos">A propos</a> 
-                </li>
+    <header>
+        <nav aria-label="Navigation principale">
+            <a class="logo" href="#accueil" aria-label="MABIA SHOP, retour à l'accueil">
+                <img src="assets/logovert.png" alt="" width="40" height="40">
+                <span>MABIA SHOP</span>
+            </a>
 
-                <li>
-                    <a href="#contact">contact</a> 
-                </li>
-    
-</ul>
+            <ul id="menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-    
-    <div class="light-wth">
-                 <button class="theme-toggle" aria-label="Passer en mode sombre">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun"></i>
+            <div class="light-wth">
+                <button type="button" class="theme-toggle" aria-label="Passer en mode sombre">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
-                 <button class="wth">
-                     <div><i class="fa-brands fa-whatsapp"></i></div>      
-                    <a href="https://wa.me/22879584573" target="_blank">WhatsApp</a>
-                </button>
-    </div>
+                <a class="btn wth" href="https://wa.me/22879584573" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span class="wth-label">WhatsApp</span>
+                </a>
+            </div>
 
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</nav>
-     </header>
-     <main>
-        
-        <section id="description">
+            <button type="button" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="contenu">
+
+        <!-- ====================== Accueil ====================== -->
+        <section id="accueil">
             <div class="maindescription">
-                      <h1>BIENVENU  <br> SUR </h1> 
-                        <h1><SPAN>MABIA </SPAN> SHOP</h1> <br>
-                        <div class="premier-action">
-                            <button >   <a href="#produit">Voir nos produits</a> </button>
-                        </div>
+                <h1>
+                    <span class="intro">Bienvenue sur</span>
+                    <span class="accent">MABIA</span> SHOP
+                </h1>
+                <div class="premier-action">
+                    <a class="btn" href="#produits">Voir nos produits</a>
+                </div>
             </div>
             <div class="maindescription-img">
-            <img src="assets/homme.png" alt="jpg"> 
-             <img src="assets/images__1_-removebg-preview.png" alt="jpg"> 
+                <img src="assets/homme.png" alt="Homme portant une tenue de la boutique MABIA SHOP">
+                <img src="assets/images__1_-removebg-preview.png" alt="" aria-hidden="true">
             </div>
-          
         </section>
-        <section id="personnal-branding">
-           <h1>POURQUOI NOUS ?</h1>
-           <section id="option">
-                <div class="option1">
-                <div><i class="fa-sharp fa-regular fa-star"></i></div>
-                <h1> Produits tendance</h1>  
-                <p>
-                    Des modèles actuels, 
-                    sélectionnés avec soin pour tous les styles.
-                </p> 
-                </div>
 
+        <!-- ====================== Pourquoi nous ====================== -->
+        <section id="pourquoi-nous" aria-labelledby="titre-pourquoi">
+            <h2 class="section-titre" id="titre-pourquoi">Pourquoi nous ?</h2>
+            <div id="option">
                 <div class="option1">
-                    <div><i class="fa-solid fa-truck-fast"></i></div>
-                <h1>Livraison à Lomé</h1>  
-                <p>
-                   Recevez vos articles rapidement, à Lomé et environs.
-                </p> 
+                    <div class="icone" aria-hidden="true"><i class="fa-regular fa-star"></i></div>
+                    <h3>Produits tendance</h3>
+                    <p>Des modèles actuels, sélectionnés avec soin pour tous les styles.</p>
                 </div>
-
                 <div class="option1">
-                    <div><i class="fa-solid fa-shield-halved"></i></div>
-                <h1> Paiement sécurisé</h1>  
-                <p>
-                Mobile Money (TMoney, Flooz) ou paiement 
-                à la livraison selon la zone.
-                </p> 
+                    <div class="icone" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>Livraison à Lomé</h3>
+                    <p>Recevez vos articles rapidement, à Lomé et environs.</p>
                 </div>
-
-                 <div class="option1">
-                    <div><i class="fa-brands fa-whatsapp"></i></div>
-                <h1> Commande facile</h1>  
-                <p>
-                    Un simple message WhatsApp suffit.
-                     Nous répondons vite.
-                </p> 
+                <div class="option1">
+                    <div class="icone" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Paiement sécurisé</h3>
+                    <p>Mobile Money (Mixx, Flooz) ou paiement à la livraison selon la zone.</p>
                 </div>
-                 
-           </section>
+                <div class="option1">
+                    <div class="icone" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3>Commande facile</h3>
+                    <p>Un simple message WhatsApp suffit. Nous répondons vite.</p>
+                </div>
+            </div>
         </section>
-        <section id="produit">
-            <section id="info-action">
-                <h1>Nos Produits</h1> 
+
+        <!-- ====================== Produits ====================== -->
+        <section id="produits" aria-labelledby="titre-produits">
+            <div id="info-action">
+                <h2 class="section-titre" id="titre-produits">Nos produits</h2>
                 <p>Découvrez notre collection de produits de qualité supérieure, conçus pour sublimer votre style.</p>
-                <div class="action">
-                <button><a href="#produit">Tout</a></button>
-                <button><a href="#robe">Robe</a></button>
-                <button><a href="#costume">Costume</a></button>
-                <button><a href="#ensemble">Ensemble</a></button>
-                 <button><a href="#sac">Autres</a></button>
-                </div> 
-              </section>    
-                <section id="produit">
-<!--=====================liste des robe =======================-->
-                 <section id="robe">
-                          <article>
-                         <img src="assets/robe1.jpg" alt="Produit 1">
-                         <h3>Robe avec motif fleurs</h3>
-                         <p> Prix: 3500 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                     </article>
-                     <article>
-                         <img src="assets/robe2.jpg" alt="Produit 2">
-                         <h3>Robe fleuri</h3>
-                         <p> Prix: 4000 FCFA</p>
-                         <button>
-                             <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                         </button>
-                     </article>
-                     <article>
-                            <img src="assets/robe3.jpg" alt="Produit 3">
-                            <h3>Robe simple</h3>
-                            <p> Prix: 3500 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                     </article>
-                     <article>
-                            <img src="assets/robe4.jpg" alt="Produit 4">
-                            <h3>Robe bleue</h3>
-                            <p> Prix: 3500 FCFA</p>
-                            <button>
-                                <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                            </button>
-                     </article>
-                 </section>  
-                 </section>
-    <!--=====================liste des constume =======================-->
-                 <section id="costume">
-                    <article>
-                        <img src="assets/veste1.jpg" alt="Produit 1">
-                        <h3>Costume noir</h3>
-                        <p> Prix: 15000 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                    </article>
-                    <article>
-                        <img src="assets/veste2.jpg" alt="Produit 2">
-                        <h3>Costume gris</h3>
-                        <p> Prix: 14000 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                     </article>
-                    <article>
-                           <img src="assets/veste3.jpg" alt="Produit 3">
-                           <h3>Costume bleu marine</h3>
-                           <p> Prix: 16500 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                    </article>
-                    <article>
-                           <img src="assets/veste.jpg" alt="Produit 4">
-                           <h3>Costume bleu</h3>
-                           <p> Prix: 15000 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                     </article>
-                 </section>
-    <!--=====================liste des ensemble homme/femme =======================-->
-                 <section id="ensemble">
-                    <article>
-                        <img src="assets/essemble1.jpg" alt="Produit 1">
-                        <h3>Ensemble chic pour femme</h3>
-                        <p> Prix: 35000 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                    </article>
-                    <article>
-                        <img src="assets/ensemble2.jpg" alt="Produit 2">
-                        <h3>Ensemble casual pour homme</h3>
-                        <p> Prix: 40000 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                     </article>
-                    <article>
-                           <img src="assets/ensemble3.jpg" alt="Produit 3">
-                           <h3>Ensemble élégant pour homme</h3>
-                           <p> Prix: 35000 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                    </article>
-                    <article>
-                           <img src="assets/ensemble4.jpg" alt="Produit 4">
-                           <h3>Ensemble casual pour femme</h3>
-                           <p> Prix: 20500 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                     </article>
-                     <article>
-                           <img src="assets/ensemble5.jpg" alt="Produit 5">
-                           <h3>Ensemble chic pour femme</h3>
-                           <p> Prix: 35000 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                        </article>
-                 </section>
- <!--=====================liste des sac a main  =======================-->
-         
-                 <section id="sac">
-                    <article>
-                        <img src="assets/sac/Sac rose femmes.webp" alt="Produit 1">
-                        <h3>Sac rose femmes</h3>
-                        <p> Prix: 3500 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                    </article>
-                    <article>
-                        <img src="assets/sac/Un sac à main en cuir rouge vif avec des pointes de fer.webp" alt="Produit 2">
-                        <h3>Un sac à main en cuir rouge vif avec des pointes</h3>
-                        <p> Prix: 4000 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                     </article>
-                    <article>
-                           <img src="assets/sac/Sac à main orange.webp" alt="Produit 3">
-                           <h3>Sac à main orange</h3>
-                           <p> Prix: 3500 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                    </article>
-                    <article>
-                           <img src="assets/sac/istockphoto-626234448-612x612.jpg" alt="Produit 4">
-                           <h3>sac a main</h3>
-                           <p> Prix: 3500 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                     </article>
-                 </section>
-<!--=====================liste des chaussures hommes  =======================-->
+                <div class="action" role="group" aria-label="Filtrer les produits par catégorie">
+                    <button type="button" data-filtre="tout" aria-pressed="true">Tout</button>
+                    <button type="button" data-filtre="robes" aria-pressed="false">Robes</button>
+                    <button type="button" data-filtre="costumes" aria-pressed="false">Costumes</button>
+                    <button type="button" data-filtre="ensembles" aria-pressed="false">Ensembles</button>
+                    <button type="button" data-filtre="sacs" aria-pressed="false">Sacs à main</button>
+                    <button type="button" data-filtre="chaussures-femme" aria-pressed="false">Chaussures femme</button>
+                    <button type="button" data-filtre="chaussures-homme" aria-pressed="false">Chaussures homme</button>
+                </div>
+            </div>
 
-                 <section id="chaussure_femme">
-                    <article>
-                        <img src="assets/chaussures_femme/istockphoto-477850598-612x612.jpg" alt="">
-                        <h3>chaussure chic pour femme</h3>
-                        <p> Prix: 3500 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                    </article>
-                    <article>
-                        <img src="assets/chaussures_femme/istockphoto-626290778-612x612.jpg" alt="">
-                        <h3>chaussure haute talon</h3>
-                        <p> Prix: 4000 FCFA</p>
-                        <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                        </button>
-                     </article>
-                    <article>
-                           <img src="assets/chaussures_femme/bottes.jpg" alt="bottes">
-                           <h3>Bottes pour femme</h3>
-                           <p> Prix: 7500 FCFA</p>
-                           <button>
-                               <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                           </button>
-                    
-                 </article>    
-                 
+            <!-- ===== Robes ===== -->
+            <section class="categorie" id="robes" aria-labelledby="titre-robes">
+                <h3 id="titre-robes">Robes</h3>
                 <article>
-                          <img src="assets/chaussures_femme/Beige chaussures à talons bas.webp" alt="Beige chaussures à talons bas">
-                          <h3>Beige chaussures à talons bas</h3>
-                          <p> Prix: 5000 FCFA</p>
-                          <button>
-                            <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                          </button>
-                </article>
-                 </section>
-
-<!--=====================liste des chaussures hommes  =======================-->
-            <section id="chaussure_homme">
-                <article>
-                    <img src="assets/chausssures_hommes/chaussure de sport.webp" alt="Produit 1">
-                    <h3>chaussure de sport</h3>
-                    <p> Prix: 8500 FCFA</p>
-                    <button>
-                        <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                    </button>
+                    <img src="assets/robe1.jpg" alt="Robe avec motif fleurs" loading="lazy" decoding="async">
+                    <h4>Robe avec motif fleurs</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Robe avec motif fleurs</span></a>
                 </article>
                 <article>
-                    <img src="assets/chausssures_hommes/Nike Air Max 90 Hyperfuse trainer.webp" alt="Nike Air Max 90 Hyperfuse trainer ">
-                    <h3>Nike Air Max 90 Hyperfuse trainer</h3>
-                    <p> Prix: 10500 FCFA</p>
-                    <button>
-                        <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                    </button>
-                 </article>
+                    <img src="assets/robe2.jpg" alt="Robe fleurie" loading="lazy" decoding="async">
+                    <h4>Robe fleurie</h4>
+                    <p class="prix">Prix : 4000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Robe fleurie</span></a>
+                </article>
                 <article>
-                       <img src="assets/chausssures_hommes/mocassin.jpg" alt="mocassin">
-                       <h3>chaussure homme</h3>
-                       <p> Prix: 7500 FCFA</p>
-                       <button>
-                           <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                       </button>
-               
-               </article>    
-               <article>
-                       <img src="assets/chausssures_hommes/Chaussures de course à stabilité et coussin.webp" alt="Chaussures de course à stabilité et coussin">
-                       <h3>Chaussures de course à stabilité et coussin</h3>
-                       <p> Prix: 6000 FCFA</p>
-                       <button>
-                           <a href="https://wa.me/22879584573" target="_blank">commander</a>
-                       </button>
+                    <img src="assets/robe3.jpg" alt="Robe simple" loading="lazy" decoding="async">
+                    <h4>Robe simple</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Robe simple</span></a>
+                </article>
+                <article>
+                    <img src="assets/robe4.jpg" alt="Robe bleue" loading="lazy" decoding="async">
+                    <h4>Robe bleue</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Robe bleue</span></a>
                 </article>
             </section>
- <!--====================== section Comment commander ======================-->
-    <section id="Commentcommander">
-       <h1>Comment commander?</h1>
-        <section class="commande">
-            <h3><span>1</span> Choisissez votre article</h3>
-            <p>Recevez nos nouveautés.</p>
-        </section>
-        <section class="commande">
-            <h3><span>2</span> Cliquez sur commander</h3>
-            <p>WhatsApp s'ouvre avec votre message prêt.</p>
-        </section>
-        <section class="commande">
-            <h3><span>3</span> Confirmez votre commande sur WhatsApp</h3>
-            <p>Nous vérifions la disponibilité avec vous.</p>
-        </section>
-        <section class="commande">
-            <h3><span>4</span> Recevez votre article à Lomé</h3>
-            <p>Livraison à Lomé et environs</p>
-        </section>
-        <button class="choix"><a href="#produit">Choisir un article</a></button>
 
+            <!-- ===== Costumes ===== -->
+            <section class="categorie" id="costumes" aria-labelledby="titre-costumes">
+                <h3 id="titre-costumes">Costumes</h3>
+                <article>
+                    <img src="assets/veste1.jpg" alt="Costume noir" loading="lazy" decoding="async">
+                    <h4>Costume noir</h4>
+                    <p class="prix">Prix : 15000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Costume noir</span></a>
+                </article>
+                <article>
+                    <img src="assets/veste2.jpg" alt="Costume gris" loading="lazy" decoding="async">
+                    <h4>Costume gris</h4>
+                    <p class="prix">Prix : 14000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Costume gris</span></a>
+                </article>
+                <article>
+                    <img src="assets/veste3.jpg" alt="Costume bleu marine" loading="lazy" decoding="async">
+                    <h4>Costume bleu marine</h4>
+                    <p class="prix">Prix : 16500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Costume bleu marine</span></a>
+                </article>
+                <article>
+                    <img src="assets/veste.jpg" alt="Costume bleu" loading="lazy" decoding="async">
+                    <h4>Costume bleu</h4>
+                    <p class="prix">Prix : 15000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Costume bleu</span></a>
+                </article>
+            </section>
 
-    </section>
- <!--====================== section A propos ======================-->
-   
-    <section id="Apropos">
-        <h1>A propos</h1>
-        <p>MABIA SHOP est une boutique de mode, installé à Lomé. 
-        Nous choisissons des vêtements et accessoires de qualité, 
-        au style moderne et à prix accessibles, pour que chaque 
-        personne se sente belle, du quotidien aux grandes occasions. 
-        Notre équipe vous conseille sur WhatsAppet et vous livre à Lomé 
-        et environs.
-        </p>
-        <div id="qualité">
-            <h3>Qualité</h3>
-            <p>Finitions soignées</p>
-        </div>
-        <div id="style">
-            <h3>Style</h3>
-            <p>Des looks actuels</p>
-        </div>
-        <div id="serviceclient">
-            <h3>Service client</h3>
-            <p>Réponse rapide</p>
-        </div>
-        <div id="livraison">
-            <h3>Livraison</h3>
-            <p>Lomé et environs</p>
-        </div>
-    </section>
- <!--====================== section contact  ======================-->
-   
-    <section id="contact">
-        <h1>Contact</h1>
-        <p><span>Téléphone</span><br/>+228 79 58 45 73<br/>
-        <span>Horaires</span><br/>Lundi à Samedi, de 8h à 19h<br/>
-        <span>Adresse</span><br/>Adidogomé<br/>
-        <span>Paiements acceptés</span><br/>Espèces, Mixx, Flooz<br/>
-        <span>Livraison</span><br/>Lomé et environs<br/></p>
-        <button>
-            <div><i class="fa-brands fa-whatsapp"></i></div>
-            <a href="https://wa.me/22879584573">Ecrire sur WhatsApp</a>
-        </button>
-        <button>
-            <div><i class="fa-brands fa-instagram"></i></div>
-            <a href="https://www.instagram.com/eletrobooks?stkn=MWM1bmI4cTVhN2Ix">Instagram</a>
-        </button>
-        <button>
-            <div><i class="fa-brands fa-facebook"></i></div>    
-            <a href="https://www.facebook.com/share/18pPpmK6qR/">facebook</a>
-        </button>
-        <button>
-            <div><i class="fa-brands fa-tiktok"></i></div>
-            <a href="https://vm.tiktok.com/ZS9DaQHxopb8f-8Z4x6/">TikTok</a>
-        </button>
-    </section>
- <!--====================== MAP ======================-->
-    <section id="position">
-      
-            <h1>Où nous trouver</h1>
+            <!-- ===== Ensembles ===== -->
+            <section class="categorie" id="ensembles" aria-labelledby="titre-ensembles">
+                <h3 id="titre-ensembles">Ensembles</h3>
+                <article>
+                    <img src="assets/essemble1.jpg" alt="Ensemble chic pour femme" loading="lazy" decoding="async">
+                    <h4>Ensemble chic pour femme</h4>
+                    <p class="prix">Prix : 35000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Ensemble chic pour femme</span></a>
+                </article>
+                <article>
+                    <img src="assets/ensemble2.jpg" alt="Ensemble casual pour homme" loading="lazy" decoding="async">
+                    <h4>Ensemble casual pour homme</h4>
+                    <p class="prix">Prix : 40000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Ensemble casual pour homme</span></a>
+                </article>
+                <article>
+                    <img src="assets/ensemble3.jpg" alt="Ensemble élégant pour homme" loading="lazy" decoding="async">
+                    <h4>Ensemble élégant pour homme</h4>
+                    <p class="prix">Prix : 35000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Ensemble élégant pour homme</span></a>
+                </article>
+                <article>
+                    <img src="assets/ensemble4.jpg" alt="Ensemble casual pour femme" loading="lazy" decoding="async">
+                    <h4>Ensemble casual pour femme</h4>
+                    <p class="prix">Prix : 20500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Ensemble casual pour femme</span></a>
+                </article>
+                <article>
+                    <img src="assets/ensemble5.jpg" alt="Ensemble chic pour femme" loading="lazy" decoding="async">
+                    <h4>Ensemble chic pour femme</h4>
+                    <p class="prix">Prix : 35000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Ensemble chic pour femme</span></a>
+                </article>
+            </section>
+
+            <!-- ===== Sacs à main ===== -->
+            <section class="categorie" id="sacs" aria-labelledby="titre-sacs">
+                <h3 id="titre-sacs">Sacs à main</h3>
+                <article>
+                    <img src="assets/sac/Sac rose femmes.webp" alt="Sac rose pour femme" loading="lazy" decoding="async">
+                    <h4>Sac rose pour femme</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Sac rose pour femme</span></a>
+                </article>
+                <article>
+                    <img src="assets/sac/Un sac à main en cuir rouge vif avec des pointes de fer.webp" alt="Sac à main en cuir rouge vif avec pointes" loading="lazy" decoding="async">
+                    <h4>Sac à main en cuir rouge vif avec pointes</h4>
+                    <p class="prix">Prix : 4000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Sac à main en cuir rouge vif avec pointes</span></a>
+                </article>
+                <article>
+                    <img src="assets/sac/Sac à main orange.webp" alt="Sac à main orange" loading="lazy" decoding="async">
+                    <h4>Sac à main orange</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Sac à main orange</span></a>
+                </article>
+                <article>
+                    <img src="assets/sac/istockphoto-626234448-612x612.jpg" alt="Sac à main" loading="lazy" decoding="async">
+                    <h4>Sac à main</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Sac à main</span></a>
+                </article>
+            </section>
+
+            <!-- ===== Chaussures femme ===== -->
+            <section class="categorie" id="chaussures-femme" aria-labelledby="titre-chaussures-femme">
+                <h3 id="titre-chaussures-femme">Chaussures femme</h3>
+                <article>
+                    <img src="assets/chaussures_femme/istockphoto-477850598-612x612.jpg" alt="Chaussures chics pour femme" loading="lazy" decoding="async">
+                    <h4>Chaussures chics pour femme</h4>
+                    <p class="prix">Prix : 3500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Chaussures chics pour femme</span></a>
+                </article>
+                <article>
+                    <img src="assets/chaussures_femme/istockphoto-626290778-612x612.jpg" alt="Chaussures à talons hauts" loading="lazy" decoding="async">
+                    <h4>Chaussures à talons hauts</h4>
+                    <p class="prix">Prix : 4000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Chaussures à talons hauts</span></a>
+                </article>
+                <article>
+                    <img src="assets/chaussures_femme/bottes.jpg" alt="Bottes pour femme" loading="lazy" decoding="async">
+                    <h4>Bottes pour femme</h4>
+                    <p class="prix">Prix : 7500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Bottes pour femme</span></a>
+                </article>
+                <article>
+                    <img src="assets/chaussures_femme/Beige chaussures à talons bas.webp" alt="Chaussures beiges à talons bas" loading="lazy" decoding="async">
+                    <h4>Chaussures beiges à talons bas</h4>
+                    <p class="prix">Prix : 5000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Chaussures beiges à talons bas</span></a>
+                </article>
+            </section>
+
+            <!-- ===== Chaussures homme ===== -->
+            <section class="categorie" id="chaussures-homme" aria-labelledby="titre-chaussures-homme">
+                <h3 id="titre-chaussures-homme">Chaussures homme</h3>
+                <article>
+                    <img src="assets/chausssures_hommes/chaussure de sport.webp" alt="Chaussures de sport" loading="lazy" decoding="async">
+                    <h4>Chaussures de sport</h4>
+                    <p class="prix">Prix : 8500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Chaussures de sport</span></a>
+                </article>
+                <article>
+                    <img src="assets/chausssures_hommes/Nike Air Max 90 Hyperfuse trainer.webp" alt="Nike Air Max 90 Hyperfuse trainer" loading="lazy" decoding="async">
+                    <h4>Nike Air Max 90 Hyperfuse trainer</h4>
+                    <p class="prix">Prix : 10500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Nike Air Max 90 Hyperfuse trainer</span></a>
+                </article>
+                <article>
+                    <img src="assets/chausssures_hommes/mocassin.jpg" alt="Mocassins pour homme" loading="lazy" decoding="async">
+                    <h4>Mocassins pour homme</h4>
+                    <p class="prix">Prix : 7500 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Mocassins pour homme</span></a>
+                </article>
+                <article>
+                    <img src="assets/chausssures_hommes/Chaussures de course à stabilité et coussin.webp" alt="Chaussures de course à stabilité et coussin" loading="lazy" decoding="async">
+                    <h4>Chaussures de course à stabilité et coussin</h4>
+                    <p class="prix">Prix : 6000 FCFA</p>
+                    <a class="btn btn-commander" href="https://wa.me/22879584573" target="_blank" rel="noopener">Commander<span class="sr-only"> : Chaussures de course à stabilité et coussin</span></a>
+                </article>
+            </section>
+        </section>
+
+        <!-- ====================== Comment commander ====================== -->
+        <section id="comment-commander" aria-labelledby="titre-commander">
+            <h2 class="section-titre" id="titre-commander">Comment commander ?</h2>
+            <ol class="etapes">
+                <li class="commande">
+                    <h3><span aria-hidden="true">1</span> Choisissez votre article</h3>
+                    <p>Parcourez nos robes, costumes, ensembles, sacs et chaussures.</p>
+                </li>
+                <li class="commande">
+                    <h3><span aria-hidden="true">2</span> Cliquez sur « Commander »</h3>
+                    <p>WhatsApp s'ouvre avec votre message prêt.</p>
+                </li>
+                <li class="commande">
+                    <h3><span aria-hidden="true">3</span> Confirmez sur WhatsApp</h3>
+                    <p>Nous vérifions la disponibilité avec vous.</p>
+                </li>
+                <li class="commande">
+                    <h3><span aria-hidden="true">4</span> Recevez votre article à Lomé</h3>
+                    <p>Livraison à Lomé et environs.</p>
+                </li>
+            </ol>
+            <a class="btn choix" href="#produits">Choisir un article</a>
+        </section>
+
+        <!-- ====================== À propos ====================== -->
+        <section id="a-propos" aria-labelledby="titre-apropos">
+            <h2 class="section-titre" id="titre-apropos">À propos</h2>
+            <p>MABIA SHOP est une boutique de mode installée à Lomé. Nous choisissons des vêtements et accessoires de qualité, au style moderne et à prix accessibles, pour que chaque personne se sente belle, du quotidien aux grandes occasions. Notre équipe vous conseille sur WhatsApp et vous livre à Lomé et environs.</p>
+            <div class="valeur">
+                <h3>Qualité</h3>
+                <p>Finitions soignées</p>
+            </div>
+            <div class="valeur">
+                <h3>Style</h3>
+                <p>Des looks actuels</p>
+            </div>
+            <div class="valeur">
+                <h3>Service client</h3>
+                <p>Réponse rapide</p>
+            </div>
+            <div class="valeur">
+                <h3>Livraison</h3>
+                <p>Lomé et environs</p>
+            </div>
+        </section>
+
+        <!-- ====================== Contact ====================== -->
+        <section id="contact" aria-labelledby="titre-contact">
+            <h2 class="section-titre" id="titre-contact">Contact</h2>
+            <dl class="infos">
+                <div><dt>Téléphone</dt><dd><a href="tel:+22879584573">+228 79 58 45 73</a></dd></div>
+                <div><dt>Horaires</dt><dd>Lundi à samedi, de 8h à 19h</dd></div>
+                <div><dt>Adresse</dt><dd>Adidogomé, Lomé</dd></div>
+                <div><dt>Paiements acceptés</dt><dd>Espèces, Mixx, Flooz</dd></div>
+                <div><dt>Livraison</dt><dd>Lomé et environs</dd></div>
+            </dl>
+            <div class="contact-actions">
+                <a class="btn btn-principal" href="https://wa.me/22879584573" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Écrire sur WhatsApp</a>
+                <a class="btn" href="https://www.instagram.com/eletrobooks?stkn=MWM1bmI4cTVhN2Ix" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+                <a class="btn" href="https://www.facebook.com/share/18pPpmK6qR/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a>
+                <a class="btn" href="https://vm.tiktok.com/ZS9DaQHxopb8f-8Z4x6/" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok" aria-hidden="true"></i> TikTok</a>
+            </div>
+        </section>
+
+        <!-- ====================== Carte ====================== -->
+        <section id="position" aria-labelledby="titre-position">
+            <h2 class="section-titre" id="titre-position">Où nous trouver</h2>
             <p>Notre boutique est à Adidogomé, Lomé. Livraison à Lomé et environs.</p>
             <iframe
                 title="Localisation de MABIA SHOP à Adidogomé, Lomé"
-                src="https://www.google.com/maps?q=Adidogom%C3%A9%2C%20Lom%C3%A9%2C%20Togo&output=embed"
+                src="https://www.google.com/maps?q=Adidogom%C3%A9%2C%20Lom%C3%A9%2C%20Togo&amp;output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 allowfullscreen></iframe>
-            <button>
-                <div><i class="fa-solid fa-location-dot"></i></div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Adidogom%C3%A9%2C+Lom%C3%A9%2C+Togo" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
-            </button>
+            <a class="btn btn-principal" href="https://www.google.com/maps/search/?api=1&amp;query=Adidogom%C3%A9%2C+Lom%C3%A9%2C+Togo" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ouvrir dans Google Maps</a>
+        </section>
+    </main>
 
-    </section>
-   
     <footer>
         <h2>MABIA SHOP</h2>
-        <p>Votre style, notre passioon.<br/>
-        Boutique de mode à Lomé, Togo.
-        <ul>
-            <li>Accueil<a href= "#description" ></a></li>
-            <li>Produits<a href= "#produit" ></a></li>
-            <li>Comment commander<a href= "#Commentcommander" ></a></li>
-            <li>A propos<a href= "#Apropos" ></a></li>
-            <li>Contact<a href= "#contact" ></a></li>
-        </ul>
-        <button>
-            <div><i class="fa-brands fa-instagram"></i></div>
-            <a href="https://www.instagram.com/eletrobooks?stkn=MWM1bmI4cTVhN2Ix">Instagram</a>
-        </button>
-        <button>
-            <div><i class="fa-brands fa-facebook"></i></div>    
-            <a href="https://www.facebook.com/share/18pPpmK6qR/">facebook</a>
-        </button>
-        <button>
-            <div><i class="fa-brands fa-tiktok"></i></div>
-            <a href="https://vm.tiktok.com/ZS9DaQHxopb8f-8Z4x6/">TikTok</a>
-        </button>
-        </p>
-        <p>&#169 2026 MABIA SHOP. Tous droits réservés.</p>
-
-
+        <p>Votre style, notre passion.<br>Boutique de mode à Lomé, Togo.</p>
+        <nav aria-label="Navigation du pied de page">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#comment-commander">Comment commander</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="reseaux">
+            <a class="btn" href="https://www.instagram.com/eletrobooks?stkn=MWM1bmI4cTVhN2Ix" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a class="btn" href="https://www.facebook.com/share/18pPpmK6qR/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a>
+            <a class="btn" href="https://vm.tiktok.com/ZS9DaQHxopb8f-8Z4x6/" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok" aria-hidden="true"></i> TikTok</a>
+        </div>
+        <p>&copy; 2026 MABIA SHOP. Tous droits réservés.</p>
     </footer>
-
-            
-     </main>
 </body>
 </html>

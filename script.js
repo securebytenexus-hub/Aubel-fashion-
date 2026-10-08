@@ -11,15 +11,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ----- Boutons « commander » : message WhatsApp pré-rempli -----
   document.querySelectorAll("article").forEach((article) => {
-    const nom = article.querySelector("h3").textContent.trim();
-    const prix = article.querySelector("p").textContent.replace(/^\s*Prix\s*:\s*/i, "").trim();
+    const titre = article.querySelector("h4");
+    const prixEl = article.querySelector(".prix");
+    const lien = article.querySelector(".btn-commander");
+    if (!titre || !prixEl || !lien) return;
+    const nom = titre.textContent.trim();
+    const prix = prixEl.textContent.replace(/^\s*Prix\s*:\s*/i, "").trim();
     const message = `Bonjour MABIA SHOP, je souhaite commander : ${nom} (${prix}). Est-il disponible ?`;
-    const lien = article.querySelector("button a");
-    if (lien) {
-      lien.href = `https://wa.me/${NUMERO}?text=${encodeURIComponent(message)}`;
-      lien.target = "_blank";
-      lien.rel = "noopener";
-    }
+    lien.href = `https://wa.me/${NUMERO}?text=${encodeURIComponent(message)}`;
+    lien.target = "_blank";
+    lien.rel = "noopener";
+  });
+
+  // ----- Filtres de produits -----
+  const filtres = document.querySelectorAll(".action button[data-filtre]");
+  const categories = document.querySelectorAll(".categorie");
+  filtres.forEach((bouton) => {
+    bouton.addEventListener("click", () => {
+      const choix = bouton.dataset.filtre;
+      filtres.forEach((b) => b.setAttribute("aria-pressed", String(b === bouton)));
+      categories.forEach((cat) => { cat.hidden = choix !== "tout" && cat.id !== choix; });
+    });
   });
 
   // ----- Bouton thème -----
